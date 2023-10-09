@@ -1,2 +1,2 @@
-require'editor-conf'
-require'lazy-setup'
+require('editor-conf')
+require('lazy-setup')
