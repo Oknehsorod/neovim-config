@@ -2,8 +2,9 @@ return {
   'neovim/nvim-lspconfig',
   ft = { 'typescript', 'javascript', 'lua' },
   config = function()
-    require('lspconfig').tsserver.setup({})
-    require('lspconfig').lua_ls.setup({
+    local lspconfig = require('lspconfig')
+    lspconfig.tsserver.setup({})
+    lspconfig.lua_ls.setup({
       settings = {
         Lua = {
           diagnostics = {
@@ -11,6 +12,13 @@ return {
           },
         },
       },
+    })
+    vim.api.nvim_create_autocmd('LspAttach', {
+      group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+      callback = function(ev)
+        local opts = { buffer = ev.buf }
+        vim.keymap.set('n', 'fg', vim.lsp.buf.definition, opts)
+      end,
     })
   end,
 }
