@@ -1,6 +1,6 @@
 return {
   'neovim/nvim-lspconfig',
-  ft = { 'typescript', 'javascript', 'lua' },
+  ft = { 'typescript', 'typescriptreact', 'javascript', 'lua' },
   config = function()
     local lspconfig = require('lspconfig')
     lspconfig.tsserver.setup({})

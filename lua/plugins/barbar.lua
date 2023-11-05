@@ -1,8 +1,14 @@
 return {
   'romgrk/barbar.nvim',
+  lazy = false,
   dependencies = {
     'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
     'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+  },
+  keys = {
+    { 'gt', ':BufferNext<cr>', desc = 'Switch to the next buffer' },
+    { 'gT', ':BufferPrevious<cr>', desc = 'Switch to the previous buffer' },
+    { 'gd', ':BufferClose<cr>', desc = 'Close current buffer' },
   },
   init = function()
     vim.g.barbar_auto_setup = false

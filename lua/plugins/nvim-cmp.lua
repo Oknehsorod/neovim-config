@@ -10,7 +10,7 @@ end
 
 return {
   'hrsh7th/nvim-cmp',
-  ft = { 'typescript', 'javascript', 'lua' },
+  lazy = false,
   dependencies = {
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-buffer',
