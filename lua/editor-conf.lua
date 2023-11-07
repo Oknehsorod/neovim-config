@@ -23,3 +23,4 @@ vim.opt.writebackup = false
 vim.cmd('set shortmess+=c')
 vim.opt.spell = true
 vim.opt.spelllang = { 'en_us' }
+vim.opt.spelloptions = 'camel'
